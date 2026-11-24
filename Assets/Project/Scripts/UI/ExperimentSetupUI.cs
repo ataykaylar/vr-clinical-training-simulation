@@ -15,9 +15,12 @@ public class ExperimentSetupUI : MonoBehaviour
 
     public Toggle guidanceToggle;
     public Toggle feedbackToggle;
- 
+
     public void SaveExperimentSettings()
     {
+       
+
+
         if (string.IsNullOrWhiteSpace(participantIDInput.text))
         {
             Debug.LogWarning("Participant ID is required.");
@@ -37,7 +40,7 @@ public class ExperimentSetupUI : MonoBehaviour
             Debug.LogWarning("Please complete all dropdown selections.");
             return;
         }
-         Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
+        Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
 
 
         ExperimentConfig.ParticipantID = participantIDInput.text.Trim();
@@ -55,23 +58,24 @@ public class ExperimentSetupUI : MonoBehaviour
         ExperimentConfig.GuidanceEnabled = guidanceToggle.isOn;
         ExperimentConfig.ImmediateFeedbackEnabled = feedbackToggle.isOn;
 
-        Debug.Log(  $"Participant: {ExperimentConfig.ParticipantID}, " +$"Age: {ExperimentConfig.Age}, " +$"Experience: {ExperimentConfig.ClinicalExperience}, " +$"VR Experience: {ExperimentConfig.PreviousVRExperience}, " +$"Mode: {ExperimentConfig.ScenarioMode}, " + $"Guidance: {ExperimentConfig.GuidanceEnabled}, " +$"Feedback: {ExperimentConfig.ImmediateFeedbackEnabled}");
+        Debug.Log($"Participant: {ExperimentConfig.ParticipantID}, " + $"Age: {ExperimentConfig.Age}, " + $"Experience: {ExperimentConfig.ClinicalExperience}, " + $"VR Experience: {ExperimentConfig.PreviousVRExperience}, " + $"Mode: {ExperimentConfig.ScenarioMode}, " + $"Guidance: {ExperimentConfig.GuidanceEnabled}, " + $"Feedback: {ExperimentConfig.ImmediateFeedbackEnabled}");
         ExperimentRecord record = new ExperimentRecord
-    {
-    ParticipantID = ExperimentConfig.ParticipantID,
-    Age = ExperimentConfig.Age,
-    ClinicalExperience = ExperimentConfig.ClinicalExperience,
-    PreviousVRExperience = ExperimentConfig.PreviousVRExperience,
-    ScenarioMode = ExperimentConfig.ScenarioMode,
-    GuidanceEnabled = ExperimentConfig.GuidanceEnabled,
-    ImmediateFeedbackEnabled =
+        {
+            ParticipantID = ExperimentConfig.ParticipantID,
+            Age = ExperimentConfig.Age,
+            ClinicalExperience = ExperimentConfig.ClinicalExperience,
+            PreviousVRExperience = ExperimentConfig.PreviousVRExperience,
+            ScenarioMode = ExperimentConfig.ScenarioMode,
+            GuidanceEnabled = ExperimentConfig.GuidanceEnabled,
+            ImmediateFeedbackEnabled =
         ExperimentConfig.ImmediateFeedbackEnabled,
-    StartedAtUtc = System.DateTime.UtcNow.ToString("o")
-    };
+            StartedAtUtc = System.DateTime.UtcNow.ToString("o")
+        };
 
-ExperimentConfig.DatabaseRecordID =
-    ExperimentDatabase.SaveExperiment(record);
+        ExperimentConfig.DatabaseRecordID =
+            ExperimentDatabase.SaveExperiment(record);
 
-        SceneManager.LoadScene("VR-Nurse_Training_Simulation");
+        //SceneManager.LoadScene("VR-Nurse_Training_Simulation");
+        SceneManager.LoadScene("PPH_Task05_Prototype");
     }
 }

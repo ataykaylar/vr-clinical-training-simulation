@@ -9,10 +9,14 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Setup/ExperimentSetup.unity
     guid: 1846c8f42e56a044c962a932107d799d
   - enabled: 1
+    path: Assets/Project/Scenes/Simulation/PPH_Task05_Prototype.unity
+    guid: 39a883a359855b94da4bc9d216d244ea
+  - enabled: 1
     path: Assets/Project/Scenes/Simulation/VR-Nurse_Training_Simulation.unity
     guid: a64cf150164a5f3439c6bd0e69ec1ac2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: efb7b87eb8ecd9d46b3a0351222f323f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fba6072275013e6448e381f83d131b7f, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e60ad326389e9b14e9f7ae2c33703862, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 1b982d62b2d820e45b2977174545632a, type: 2}
   m_UseUCBPForAssetBundles: 0
