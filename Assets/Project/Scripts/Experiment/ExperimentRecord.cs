@@ -16,4 +16,11 @@ public class ExperimentRecord
     public bool ImmediateFeedbackEnabled { get; set; }
 
     public string StartedAtUtc { get; set; }
+
+
+    // "Senaryoyu Başlat" butonuna basıldığı an.
+    public string ScenarioStartedAtUtc { get; set; }
+
+    // Senaryodaki bütün görevlerin tamamlandığı an.
+    public string ScenarioEndedAtUtc { get; set; }
 }
